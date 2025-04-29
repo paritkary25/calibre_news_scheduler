@@ -28,5 +28,5 @@ fi
 sudo chmod 776 $SCRIPT_DIR/news.sh
 
 # Adding a cronjob
-crontab -l | { cat; echo "0 6 * * * "$SCRIPT_DIR/news.sh"; } | crontab -y
+crontab -l | { cat; echo "0 6 * * * "$SCRIPT_DIR/news.sh""; } | crontab -
 printf "cronjob added successfully\n Make sure to update the newsfeeds according to your need\n"
