@@ -7,7 +7,7 @@
 
 # Schedule this daily with cron to download news everyday
 # This script assumes that you are running a calibre-server service as mentioned in calibre-server service git repo
-# For monthly publications, this script checks date and downloads on the 1st
+# For monthly publications, this script checks the date and downloads on the 1st
 
 lib_path="~/Calibre Library/"
 
@@ -27,7 +27,7 @@ done
 
 # Converting Weekly
 
-if [ `date +%d` -eq 1 ];
+if [ `date +%d` -eq 01 ];
 then
     for news in "${monthly_list[@]}"
     do
@@ -37,5 +37,5 @@ then
     done
 fi
 
-# Turning the service on back again
+# Turning the service back on
 sudo service calibre-server start
