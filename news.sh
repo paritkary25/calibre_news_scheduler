@@ -21,7 +21,7 @@ sudo service calibre-server stop
 for news in "${daily_list[@]}"
 do
     ebook-convert "$news.recipe" "/tmp/$news.epub"
-    calibredb add "$lib_path" "/tmp/$news.epub"
+    calibredb add -m overwrite "$lib_path" "/tmp/$news.epub"
     rm "/tmp/$news.epub"
 done
 
@@ -32,7 +32,7 @@ then
     for news in "${monthly_list[@]}"
     do
         ebook-convert "$news.recipe" "/tmp/$news.epub"
-        calibredb add "$lib_path" "/tmp/$news.epub"
+        calibredb add -m overwrite "$lib_path" "/tmp/$news.epub"
         rm "/tmp/$news.epub"
     done
 fi
