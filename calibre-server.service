@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=yash
 Group=sudo
-ExecStart=/usr/bin/calibre-server
+ExecStart=/usr/bin/calibre-server --enable-auth
 ExecStop=/bin/kill -s SIGTERM $MAINPID
 Restart=on-failure
 TimeoutStopSec=30
